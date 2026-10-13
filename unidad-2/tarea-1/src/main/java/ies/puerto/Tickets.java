@@ -24,7 +24,16 @@ public class Tickets {
             System.out.println("Precio:");
             float precioProducto = teclado.nextFloat();
             System.out.println(nombreProducto +" - "+ precioProducto+" euros" );
+            suma = suma + precioProducto;
         }
+
+        System.out.println("==================");
+        System.out.println("      TICKET      ");
+        System.out.println("==================");
+        System.out.println("Cliente: "+nombre);
+        System.out.println("Productos: "+productos);
+        System.out.println("TOTAL: "+ suma);
+
 
 
 
