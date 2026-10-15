@@ -8,48 +8,63 @@ import java.util.Scanner;
  */
 public class Conversor {
     static void main() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
+        int conversiones = 0;
+        int opcion = 0;
         System.out.println("=============================");
         System.out.println("      CONVERSOR DAM-PRO      ");
         System.out.println("=============================");
-
         System.out.println("Introduzca su nombre:");
-        String nombre = scanner.nextLine();
+        String nombre = teclado.nextLine();
+        System.out.println("Biendenido/a "+ nombre);
+        System.out.println("¿Cuantas conversiones deseas realizar?:");
+        conversiones = teclado.nextInt();
 
-        System.out.println("Elija una de las siguientes opcione para continuar:");
-        int opcion = 0;
-        while (opcion != 4) {
+        for (int i = 1; i <=conversiones ; i++) {
+            System.out.println("Conversión "+i);
+            teclado.nextLine();
             System.out.println("1. Pasar de kilómetros a metros");
             System.out.println("2. Pasar de metros a centimtros");
             System.out.println("3. Pasar de metros a millas");
             System.out.println("4. Salir");
-            opcion = scanner.nextInt();
+            opcion = teclado.nextInt();
             if (opcion >= 5) {
                 System.out.println("Opción incorrecta");
                 return;
             }
             if (opcion == 1) {
                 System.out.println("Indique la cantidad de kilómetros:");
-                float kilometros = scanner.nextInt();
+                float kilometros = teclado.nextInt();
                 System.out.println(kilometros +" kilómetros son "+ kilometros * 1000 +" metros");
-                return;
+                if (opcion == 4) {
+                    return;
+                }
             }
             if (opcion == 2) {
                 System.out.println("Indique la cantidad de metros:");
-                float metros = scanner.nextInt();
+                float metros = teclado.nextInt();
                 System.out.println(metros +" metros son "+ metros * 100 +" centimetros");
-                return;
+                if (opcion == 4) {
+                    return;
+                }
             }
             if (opcion == 3) {
                 System.out.println("Indique la cantidad de metros:");
-                float metros = scanner.nextInt();
+                float metros = teclado.nextInt();
                 System.out.println(metros +" metros son "+ metros / 1609 +" millas");
-                return;
+                if (opcion == 4) {
+                    return;
+                }
             }
             if (opcion == 4) {
                 System.out.println("Salida exitosa del programa");
                 return;
             }
         }
+        System.out.println("==================");
+        System.out.println("Usuario: "+nombre);
+        System.out.println("Conversiones realizadas: "+conversiones);
+        System.out.println("Gracias por utilizar CONVERSOR DAM-PRO");
+        System.out.println("==================");
     }
 }
