@@ -46,7 +46,6 @@ public class Ahorro {
 
         } while ("S".equalsIgnoreCase(respuesta));
 
-
         ahorroFinal = ahorroInicial + suma;
 
         System.out.println("================================");
