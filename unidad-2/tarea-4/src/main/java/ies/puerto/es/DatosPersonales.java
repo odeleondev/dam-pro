@@ -21,5 +21,7 @@ public class DatosPersonales {
         }
         int valor = Integer.valueOf(sEdad);
         return Integer.parseInt(sEdad);
+
+        
     }
 }
