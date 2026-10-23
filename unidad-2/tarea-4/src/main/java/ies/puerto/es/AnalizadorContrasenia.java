@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author odeleondev
  * @version 1.0.0
  */
-public class AnalizadorContraseña {
+public class AnalizadorContrasenia {
 
     static void main() {
         Scanner teclado = new Scanner(System.in);
