@@ -5,23 +5,38 @@ import java.time.format.*;
 import java.time.temporal.ChronoUnit;
 
 /**
- * TODO: Describe la finalidad de CalculadoraEdad.
+ * Clase que realiza el calulo de la edad
  *
- * @author
- * @version
+ * @author odeleondev
+ * @version 1.0.0
  */
 public final class CalculadoraEdad {
     private CalculadoraEdad() { }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * 
+     * @param args
+     */
+    public static void main(String[] args) {
+        LocalDate nacimiento = LocalDate.of(2007,7,7);
+        LocalDate fechaActual = LocalDate.now();
+        Period periodo = Period.between(nacimiento, fechaActual);
+        periodo.getYears();
+        int anios = periodo.getYears();
+        System.out.println("La edad es: ");
+    }
+    /**
+     * Realiza el calculo de la edad
      *
-     * @param nacimiento
-     * @param fechaActual
-     * @return
+     * @param nacimiento LocalDate fecha nacimiento
+     * @param fechaActual LocalDate fecha actual
+     * @return int edad
      */
     public static Period calcularEdad(LocalDate nacimiento, LocalDate fechaActual) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return Period.ZERO;
+        boolean posterior = nacimiento.isAfter(fechaActual);
+        if (posterior) {
+            throw new IllegalArgumentException();
+        }
+        return Period.between(nacimiento, fechaActual);
     }
 }
